@@ -40,7 +40,6 @@ public class CSVReader {
             );
         } catch (IOException ex) {
             System.out.println("Error reading CSV File" + ex.getMessage());
-            ex.printStackTrace();
         }
         return products;
     }
