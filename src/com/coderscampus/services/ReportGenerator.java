@@ -12,10 +12,15 @@ public class ReportGenerator {
         for (Product product : products) {
             double price = product.getPrice();
             int quantity = product.getQuantity();
-            if ((price >= 0.99 && price <= 100 && quantity <= 20) || (price >= 101.00 && quantity <= 10)) {           
+            if ((price >= 0.99 && price <= 100 && quantity <= 20)) {
                 lowInventory.add(product);
-                System.out.println(product.toString()+" Low inventory");
+            } else if (price >= 101.00 && quantity <= 10) {
+                lowInventory.add(product);
             }
+        }
+        
+        for (Product product : lowInventory) {
+            System.out.println(product.toString());
         }
     }
 }
